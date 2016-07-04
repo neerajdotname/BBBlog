@@ -6,6 +6,8 @@ import {
   View,
   Text,
 } from 'react-native';
+import Drawer from 'react-native-drawer';
+import MainPanel from './MainPanel';
 
 
 export default class App extends Component {
@@ -15,9 +17,13 @@ export default class App extends Component {
 
   render () {
     return (
-      <View style={styles.container}>
-        <Text>Hello</Text>
-      </View>
+      <Drawer
+        ref={(ref) => this._drawer = ref}
+        content={<SidePanel />}
+        >
+        <MainPanel />
+      </Drawer>
+
     )
   }
 
