@@ -2,29 +2,25 @@
 
 import React, { Component } from 'react';
 import {
+  WebView,
   StyleSheet,
   View,
   Text,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
-import Drawer from 'react-native-drawer';
-import MainPanel from './MainPanel';
-import SidePanel from './SidePanel';
 
+export default class SidePanel extends Component {
 
-export default class App extends Component {
   constructor() {
-    super()
+    super();
   }
 
   render () {
     return (
-      <Drawer
-        ref={(ref) => this._drawer = ref}
-        content={<SidePanel />}
-        >
-        <MainPanel />
-      </Drawer>
-
+      <View style={styles.container}>
+        <Text>Hello</Text>
+      </View>
     )
   }
 

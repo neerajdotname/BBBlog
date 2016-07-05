@@ -7,7 +7,7 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity,
+  Button,
 } from 'react-native';
 
 export default class MainPanel extends Component {
@@ -16,27 +16,16 @@ export default class MainPanel extends Component {
     super();
   }
 
-  renderNavbar() {
-    let menuButton =
-      <TouchableOpacity
-        style={styles.hamburgerIconContainer}
-        onPress={() => this.props.onMenuPress()}>
-        <Icon name={hamburgerIconName} size={iconSize} color={iconColor} />
-      </TouchableOpacity>
-
-    return (
-      <View
-        style={styles.navBarContainer}>
-        {menuButton}
-        />
-    )
+  onMenuPress() {
+    alert('clicked');
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.container}>
-        {this.renderNavbar()}
-        <Text>Hello</Text>
+        <Text onPress={this.onMenuPress}>
+          Click me
+        </Text>
       </View>
     )
   }
