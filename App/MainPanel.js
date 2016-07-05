@@ -8,6 +8,7 @@ import {
   Text,
   Image,
   Button,
+  Platform
 } from 'react-native';
 
 export default class MainPanel extends Component {
@@ -17,9 +18,19 @@ export default class MainPanel extends Component {
   }
 
   render() {
+    let userAgent;
+
+    if (Platform.OS === "ios") {
+      userAgent = "demoapp-react-native-ios";
+    } else {
+      userAgent = "demoapp-react-native-android";
+    }
+
+    alert(userAgent);
+
     let headers = {
-      "X-DemoApp-Version": "20160629",
-      "X-DemoApp-UserAgent": "demoapp-react-native"
+      "X-DemoApp-Version": "1.1",
+      "X-DemoApp-UserAgent": userAgent
     }
 
     // ios
@@ -27,6 +38,7 @@ export default class MainPanel extends Component {
 
 
     let url = "http:localhost:3000"
+    url = "http://192.168.43.104:3000"
 
     return (
       <WebView
