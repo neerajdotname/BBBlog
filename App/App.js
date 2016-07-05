@@ -16,17 +16,27 @@ export default class App extends Component {
     super()
   }
 
+
   render () {
     return (
-      <Drawer
-        ref={(ref) => this._drawer = ref}
-        content={<SidePanel />}
-        >
-        <MainPanel />
-      </Drawer>
-
+      <MainPanel />
     )
   }
+
+  //render () {
+    //return (
+      //<Drawer
+        //ref={(ref) => this._drawer = ref}
+        //content={<SidePanel />}
+        //>
+        //<MainPanel />
+      //</Drawer>
+
+    //)
+  //}
+
+
+
 
 }
 

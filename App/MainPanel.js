@@ -16,27 +16,27 @@ export default class MainPanel extends Component {
     super();
   }
 
-  onMenuPress() {
-    alert('clicked');
-  }
-
   render() {
+    const CUSTOM_HEADERS = {
+      "X-DemoApp-Version": "20160629",
+      "X-DempApp-UserAgent": "demoapp-react-native"
+    }
+
+    let url = "http://localhost:3000"
+
     return (
-      <View style={styles.container}>
-        <Text onPress={this.onMenuPress}>
-          Click me
-        </Text>
-      </View>
+      <WebView
+      source={{uri: url}}
+      />
     )
   }
+
 
 }
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
 
