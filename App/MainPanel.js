@@ -19,8 +19,12 @@ export default class MainPanel extends Component {
   render() {
     let headers = {
       "X-DemoApp-Version": "20160629",
-      "X-DempApp-UserAgent": "demoapp-react-native"
+      "X-DemoApp-UserAgent": "demoapp-react-native"
     }
+
+    // ios
+    // "HTTP_X_DEMOAPP_USERAGENT"=>"demoapp-react-native"
+
 
     let url = "http:localhost:3000"
 
