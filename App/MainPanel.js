@@ -17,16 +17,16 @@ export default class MainPanel extends Component {
   }
 
   render() {
-    const CUSTOM_HEADERS = {
+    let headers = {
       "X-DemoApp-Version": "20160629",
       "X-DempApp-UserAgent": "demoapp-react-native"
     }
 
-    let url = "http://localhost:3000"
+    let url = "http:localhost:3000"
 
     return (
       <WebView
-      source={{uri: url}}
+      source={{uri: url, headers: headers }}
       />
     )
   }
