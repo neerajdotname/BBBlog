@@ -2,41 +2,45 @@
 
 import React, { Component } from 'react';
 import {
+  WebView,
   StyleSheet,
   View,
   Text,
+  Image,
+  Button,
+  Platform
 } from 'react-native';
-import Drawer from 'react-native-drawer';
-import MainPanel from './MainPanel';
-import SidePanel from './SidePanel';
-
 
 export default class App extends Component {
   constructor() {
     super()
   }
 
+  render() {
+    let userAgent;
 
-  render () {
+    if (Platform.OS === "ios") {
+      userAgent = "demoapp-react-native-ios";
+    } else {
+      userAgent = "demoapp-react-native-android-agent";
+    }
+
+    let headers = {
+      "X-DemoApp-Version": "1.1",
+      "X-DemoApp-UserAgent": userAgent
+    }
+
+    let url;
+    if (Platform.OS === 'ios') {
+      url = "http:localhost:3000"
+    } else {
+      url = "http://192.168.43.104:3000"
+    }
+
     return (
-      <MainPanel />
+      <WebView source={{uri: url}} />
     )
   }
-
-  //render () {
-    //return (
-      //<Drawer
-        //ref={(ref) => this._drawer = ref}
-        //content={<SidePanel />}
-        //>
-        //<MainPanel />
-      //</Drawer>
-
-    //)
-  //}
-
-
-
 
 }
 
